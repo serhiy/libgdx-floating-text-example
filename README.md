@@ -1,6 +1,6 @@
 # Examples of the LibGDX floating text
 
-![LibGDX Floating Text Example](https://github.com/serhiy/libgdx-floating-text-example/blob/master/libgdx-floating-text-example.gif)
+![LibGDX Floating Text Example](https://github.com/serhiy/libgdx-floating-text-example/blob/master/floating-text-example.gif)
 
 To run the application make sure you have Gradle plug-in integrated with your Eclipse (sorry I do not provide instructions to other IDEs) and you perform the following steps:
 1. Click on "Run" menu
