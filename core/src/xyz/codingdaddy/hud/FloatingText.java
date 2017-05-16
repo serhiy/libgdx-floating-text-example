@@ -4,6 +4,11 @@ import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 
+/**
+ * Floating text GUI component with fading text.
+ * 
+ * @author serhiy
+ */
 public class FloatingText extends Actor {
 
 	private final String text;
@@ -40,6 +45,7 @@ public class FloatingText extends Actor {
 	@Override
 	public void draw(Batch batch, float parentAlpha) {
 		if (animated) {
+			// The component will auto-destruct when animation is finished.
 			if (isDisposable()) {
 				dispose();
 				return;
@@ -47,6 +53,7 @@ public class FloatingText extends Actor {
 
 			float elapsed = System.currentTimeMillis() - animationStart;
 
+			// The text will be fading.
 			font.setColor(getColor().r, getColor().g, getColor().b, parentAlpha
 					* (1 - elapsed / animationDuration));
 
@@ -55,10 +62,17 @@ public class FloatingText extends Actor {
 		}
 	}
 
+	/**
+	 * @return true is the animation has finished.
+	 */
 	private boolean isDisposable() {
 		return animationStart + animationDuration < System.currentTimeMillis();
 	}
 
+	/**
+	 * Dispose the component. <b>Note that all the children components also should
+	 * be disposed otherwise a memory leak will occur.</b>
+	 */
 	private void dispose() {
 		font.dispose();
 		remove();

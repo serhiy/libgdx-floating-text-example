@@ -9,6 +9,11 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 
+/**
+ * Application starting point.
+ * 
+ * @author serhiy
+ */
 public class FloatingTextExampleMain extends ApplicationAdapter {
 
 	private Stage stage;
